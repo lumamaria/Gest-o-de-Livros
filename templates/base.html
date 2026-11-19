@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block titulo %}BookVerse{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+
+    {% block extra_css %}{% endblock %}
+
+
+</head>
+
+<body>
+
+    {% include 'fragments/__header.html' %}
+
+    <main>
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+
+    {% include 'fragments/__footer.html' %}
+
+</body>
+</html>

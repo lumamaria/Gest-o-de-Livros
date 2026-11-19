@@ -1,0 +1,374 @@
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+.inicio-bookverse {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px 35px;
+    box-sizing: border-box;
+    color: #294052;
+}
+
+/* ================================
+   BANNER PRINCIPAL
+================================ */
+
+.banner-principal {
+    min-height: 270px;
+    padding: 35px 7%;
+    border-radius: 18px;
+    background: linear-gradient(115deg, #075b4e, #087565);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.banner-conteudo {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.banner-subtitulo {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.banner-conteudo h1 {
+    font-size: clamp(40px, 5vw, 65px);
+    color: #a5f0d6;
+    margin: 0 0 12px;
+    font-weight: 800;
+}
+
+.banner-conteudo p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #f1fffa;
+}
+
+.btn-explorar {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+
+    background: #a5f0d6;
+    color: #075b4e;
+
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-explorar:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.banner-decoracao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+    margin-right: 5%;
+}
+
+.banner-decoracao span {
+    font-size: 115px;
+    opacity: 0.65;
+}
+
+/* ================================
+   CATÁLOGO
+================================ */
+
+.secao-catalogo {
+    margin-top: 38px;
+}
+
+.catalogo-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.catalogo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.icone-livro {
+    font-size: 42px;
+    color: #159b7b;
+    border-right: 5px solid #159b7b;
+    padding-right: 18px;
+}
+
+.catalogo-titulo h2 {
+    color: #075b4e;
+    font-size: 30px;
+    margin: 0 0 5px;
+}
+
+.catalogo-titulo p {
+    color: #64788b;
+    margin: 0;
+    font-size: 16px;
+}
+
+.btn-ver-todos {
+    padding: 12px 22px;
+    border: 1px solid #087565;
+    border-radius: 30px;
+    color: #075b4e;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.btn-ver-todos:hover {
+    background: #075b4e;
+    color: white;
+}
+
+/* ================================
+   GRID DE LIVROS
+================================ */
+
+.livros-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* ================================
+   CARD INDIVIDUAL
+================================ */
+
+.livro-card {
+    background: white;
+    border-radius: 17px;
+    padding: 22px 25px;
+    border: 1px solid #e7eeee;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-width: 0;
+    transition: 0.3s;
+}
+
+.livro-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.11);
+}
+
+.livro-card-conteudo {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.livro-icone {
+    min-width: 65px;
+    height: 65px;
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e1f4ed;
+    font-size: 35px;
+}
+
+.livro-informacoes {
+    min-width: 0;
+    flex: 1;
+}
+
+.livro-informacoes h3 {
+    color: #087565;
+    font-size: 22px;
+    margin: 0 0 12px;
+    overflow-wrap: anywhere;
+}
+
+.livro-informacoes p {
+    margin: 8px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #42586a;
+    overflow-wrap: anywhere;
+}
+
+.livro-informacoes p span {
+    color: #159b7b;
+    margin-right: 7px;
+}
+
+.livro-informacoes strong {
+    color: #30495a;
+}
+
+.livro-card-acoes {
+    margin-top: 18px;
+}
+
+.btn-detalhes {
+    display: inline-block;
+    background: #087565;
+    color: white;
+    text-decoration: none;
+
+    padding: 11px 20px;
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-detalhes:hover {
+    background: #064b40;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   CATÁLOGO VAZIO
+================================ */
+
+.mensagem-vazia {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 45px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.mensagem-vazia span {
+    font-size: 45px;
+}
+
+.mensagem-vazia h3 {
+    color: #087565;
+    margin-bottom: 8px;
+}
+
+.mensagem-vazia p {
+    color: #64788b;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 900px) {
+
+    .livros-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-decoracao {
+        margin-right: 0;
+        width: 160px;
+        height: 160px;
+    }
+
+    .banner-decoracao span {
+        font-size: 85px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .inicio-bookverse {
+        padding: 20px 14px;
+    }
+
+    .banner-principal {
+        padding: 30px 22px;
+        min-height: 260px;
+    }
+
+    .banner-decoracao {
+        display: none;
+    }
+
+    .banner-conteudo h1 {
+        font-size: 42px;
+    }
+
+    .banner-conteudo p {
+        font-size: 15px;
+    }
+
+    .catalogo-cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .catalogo-titulo {
+        gap: 12px;
+    }
+
+    .catalogo-titulo h2 {
+        font-size: 23px;
+    }
+
+    .catalogo-titulo p {
+        font-size: 14px;
+    }
+
+    .icone-livro {
+        font-size: 32px;
+        padding-right: 12px;
+    }
+
+    .livro-card {
+        padding: 18px;
+    }
+
+    .livro-card-conteudo {
+        gap: 12px;
+    }
+
+    .livro-icone {
+        min-width: 45px;
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+    }
+
+    .livro-informacoes h3 {
+        font-size: 18px;
+    }
+
+    .livro-informacoes p {
+        font-size: 13px;
+    }
+}

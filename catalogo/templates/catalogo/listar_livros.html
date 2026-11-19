@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Início | BookVerse
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/listar_livros.css' %}">
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="inicio-bookverse">
+
+    <section class="banner-principal">
+
+        <div class="banner-conteudo">
+            <span class="banner-subtitulo">SEJA BEM-VINDO AO</span>
+
+            <h1>BookVerse!</h1>
+
+            <p>
+                Descubra novos mundos, explore histórias incríveis
+                e encontre seu próximo livro favorito.
+            </p>
+
+            <a href="#catalogo" class="btn-explorar">
+                <span>⌕</span>
+                Explorar Catálogo
+                <span>›</span>
+            </a>
+        </div>
+
+        <div class="banner-decoracao" aria-hidden="true">
+            <span>📖</span>
+        </div>
+
+    </section>
+
+
+    <section class="secao-catalogo" id="catalogo">
+
+        <div class="catalogo-cabecalho">
+
+            <div class="catalogo-titulo">
+                <span class="icone-livro">▤</span>
+
+                <div>
+                    <h2>Catálogo de Livros</h2>
+                    <p>Confira os livros disponíveis em nosso catálogo.</p>
+                </div>
+            </div>
+
+            <a href="{% url 'listar_livros' %}" class="btn-ver-todos">
+                Ver todos os livros →
+            </a>
+
+        </div>
+
+
+        <div class="livros-grid">
+
+            {% for livro in livros %}
+
+                <article class="livro-card">
+
+                    <div class="livro-card-conteudo">
+
+                        <div class="livro-icone">📚</div>
+
+                        <div class="livro-informacoes">
+
+                            <h3>{{ livro.titulo }}</h3>
+
+                            <p>
+                                <span>♟</span>
+                                <strong>Autor:</strong>
+                                {{ livro.autor.nome }}
+                            </p>
+
+                            <p>
+                                <span>◆</span>
+                                <strong>Gênero:</strong>
+                                {{ livro.genero.nome }}
+                            </p>
+
+                            <p>
+                                <span>▦</span>
+                                <strong>Ano de publicação:</strong>
+                                {{ livro.ano_publicacao }}
+                            </p>
+
+                            <p class="livro-descricao">
+                                <span>▤</span>
+                                <strong>Descrição:</strong>
+                                {{ livro.descricao }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="livro-card-acoes">
+                        <a href="{% url 'detalhes_livro' livro.id %}" class="btn-detalhes">📖 Ver detalhes →</a>
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <div class="mensagem-vazia">
+                    <span>📚</span>
+                    <h3>Nenhum livro cadastrado</h3>
+                    <p>
+                        Nosso catálogo ainda está vazio.
+                        Volte em breve para descobrir novas histórias!
+                    </p>
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}

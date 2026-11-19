@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+    {{ livro.titulo }} | BookVerse
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/detalhes.css' %}">
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="container">
+
+    <a href="{% url 'listar_livros' %}" class="botao">
+        ← Voltar ao catálogo
+    </a>
+
+    <h2 style="margin-top: 25px;">
+        {{ livro.titulo }}
+    </h2>
+
+    <div class="registro">
+
+        <p>
+            <strong>Autor:</strong>
+            {{ livro.autor.nome }}
+        </p>
+
+        <p>
+            <strong>Gênero:</strong>
+            {{ livro.genero.nome }}
+        </p>
+
+        <p>
+            <strong>Ano de publicação:</strong>
+            {{ livro.ano_publicacao }}
+        </p>
+
+        <p>
+            <strong>Descrição:</strong>
+            {{ livro.descricao }}
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

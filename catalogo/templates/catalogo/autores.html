@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Autores | BookVerse{% endblock %}
+
+{% block conteudo %}
+
+<div class="container">
+
+    <h2>Cadastro de Autores</h2>
+
+    <p>Adicione novos autores ao catálogo.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Adicionar autor</button>
+    </form>
+
+    <h3>Autores cadastrados</h3>
+
+    {% for autor in autores %}
+        <div class="registro">
+            <h4>{{ autor.nome }}</h4>
+        </div>
+    {% empty %}
+        <p class="mensagem-vazia">
+            Nenhum autor cadastrado.
+        </p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
