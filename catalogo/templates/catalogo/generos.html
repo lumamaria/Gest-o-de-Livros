@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Gêneros | BookVerse{% endblock %}
+
+{% block conteudo %}
+
+<div class="container">
+
+    <h2>Cadastro de Gêneros Literários</h2>
+
+    <p>Adicione os gêneros literários disponíveis no catálogo.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Adicionar gênero</button>
+    </form>
+
+    <h3>Gêneros cadastrados</h3>
+
+    {% for genero in generos %}
+        <div class="registro">
+            <h4>{{ genero.nome }}</h4>
+        </div>
+    {% empty %}
+        <p class="mensagem-vazia">
+            Nenhum gênero cadastrado.
+        </p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
