@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
@@ -59,6 +60,73 @@
         </div>
 
 
+        <!-- Pesquisa e filtros -->
+        <form method="GET" action="{% url 'listar_livros' %}#catalogo"
+              class="formulario-filtros">
+
+            <div class="campo-pesquisa">
+                <label for="busca">Pesquisar livro:</label>
+
+                <input
+                    type="text"
+                    name="q"
+                    id="busca"
+                    placeholder="Digite o título do livro..."
+                    value="{{ busca }}"
+                >
+            </div>
+
+            <div class="campo-filtro">
+                <label for="autor">Autor:</label>
+
+                <select name="autor" id="autor">
+                    <option value="">Todos os autores</option>
+
+                    {% for autor in autores %}
+                        <option
+                            value="{{ autor.id }}"
+                            {% if autor_selecionado == autor.id|stringformat:"s" %}
+                                selected
+                            {% endif %}
+                        >
+                            {{ autor.nome }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="campo-filtro">
+                <label for="genero">Gênero:</label>
+
+                <select name="genero" id="genero">
+                    <option value="">Todos os gêneros</option>
+
+                    {% for genero in generos %}
+                        <option
+                            value="{{ genero.id }}"
+                            {% if genero_selecionado == genero.id|stringformat:"s" %}
+                                selected
+                            {% endif %}
+                        >
+                            {{ genero.nome }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" class="btn-filtrar">
+                Pesquisar
+            </button>
+
+            <a href="{% url 'listar_livros' %}#catalogo"
+               class="btn-limpar-filtros">
+                Limpar filtros
+            </a>
+
+        </form>
+
+
+        <!-- Lista de livros -->
         <div class="livros-grid">
 
             {% for livro in livros %}
@@ -102,7 +170,10 @@
                     </div>
 
                     <div class="livro-card-acoes">
-                        <a href="{% url 'detalhes_livro' livro.id %}" class="btn-detalhes">📖 Ver detalhes →</a>
+                        <a href="{% url 'detalhes_livro' livro.id %}"
+                           class="btn-detalhes">
+                            📖 Ver detalhes →
+                        </a>
                     </div>
 
                 </article>
@@ -111,14 +182,42 @@
 
                 <div class="mensagem-vazia">
                     <span>📚</span>
-                    <h3>Nenhum livro cadastrado</h3>
+                    <h3>Nenhum livro encontrado</h3>
                     <p>
-                        Nosso catálogo ainda está vazio.
-                        Volte em breve para descobrir novas histórias!
+                        Não encontramos livros com os critérios informados.
+                        Tente alterar sua pesquisa ou seus filtros!
                     </p>
                 </div>
 
             {% endfor %}
+
+        </div>
+
+
+        <!-- Paginação -->
+        <div class="paginacao">
+
+            <div class="paginacao-informacao">
+                Página {{ livros.number }} de {{ livros.paginator.num_pages }}
+            </div>
+
+            <div class="paginacao-botoes">
+
+                {% if livros.has_previous %}
+                    <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ livros.previous_page_number }}#catalogo"
+                       class="btn-paginacao">
+                        ← Anterior
+                    </a>
+                {% endif %}
+
+                {% if livros.has_next %}
+                    <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ livros.next_page_number }}#catalogo"
+                       class="btn-paginacao">
+                        Próxima →
+                    </a>
+                {% endif %}
+
+            </div>
 
         </div>
 
