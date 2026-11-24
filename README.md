@@ -1,41 +1,41 @@
-Catálogo de Livros
+*Catálogo de Livros*
 
-1. Integrantes da dupla
+_1. Integrantes da dupla_
 
 Integrante 1: Francisco Guilherme Alves Elias
 Integrante 2: Luma Maria Andrade Bandeira
 
-2. Tema escolhido
+_2. Tema escolhido_
 
 O tema escolhido foi o Catálogo de Livros, desenvolvido com Django e Python.
 O projeto Catálogo de Livros tem como objetivo organizar e disponibilizar informações sobre livros, permitindo que os usuários consultem obras literárias, pesquisem e filtrem os resultados por autor, título e gênero literário.
 Além de o sistema apresentar informações detalhadas de cada livro, como gênero, ano de publicação, título, autor e descrição.
 
-3. Filtros implementados
+_3. Filtros implementados_
 
 A listagem de livros possui três formas de pesquisa e filtragem:
 
-3.1. Pesquisa por título
+_3.1. Pesquisa por título_
 
 Permite pesquisar livros pelo título, pela consulta icontains, responsável por localizar resultados mesmo quando o usuário informa apenas uma letra ou parte do nome.
 
-3.2. Filtro por gênero literário
+_3.2. Filtro por gênero literário_
 
 Permite selecionar um gênero e apresentar somente os livros correspondente aquele gênero.
 
-3.3. Filtro por autor
+_3.3. Filtro por autor_
 
 Permite selecionar um autor determinado e ver somente os livros correspondentes a ele.
 
-3.4. Combinação de filtros
+_3.4. Combinação de filtros_
 
 Os filtros podem ser utilizados concomitantemente. Desse modo, é possível pesquisar um título limitar as escolhas.
 
-3.5. Ordenação
+_3.5. Ordenação_
 
 Os livros são organizados em ordem alfabética crescente, de acordo com o título.
 
-4. Paginação
+_4. Paginação_
 
 O catálogo utiliza o recurso Paginator do Django para dividir os resultados em páginas.
 
@@ -48,7 +48,7 @@ Indicação da página atual e da quantidade total de páginas.
 Preservação dos filtros e dos termos de pesquisa durante a navegação entre as páginas.
 A paginação facilita a consulta quando existe uma quantidade maior de livros cadastrados.
 
-5. Captura de tela
+_5. Captura de tela_
 
    <img width="1892" height="900" alt="image" src="https://github.com/user-attachments/assets/ca537f65-79bc-447b-b5aa-c7bb87493c21" />
 
