@@ -50,12 +50,16 @@ A paginação facilita a consulta quando existe uma quantidade maior de livros c
 
 _5. Captura de tela_
 
+   5.1 Tela principal
+
    <img width="1892" height="900" alt="image" src="https://github.com/user-attachments/assets/ca537f65-79bc-447b-b5aa-c7bb87493c21" />
 
+   5.2 Tela principal com listagem dos livros
    <img width="1857" height="901" alt="image" src="https://github.com/user-attachments/assets/c30f83d1-18cd-4b1f-ac3c-d48c38d24b3e" />
 
    <img width="1862" height="902" alt="image" src="https://github.com/user-attachments/assets/1b35bc5b-4c25-4a26-8806-ce61f6fad4d7" />
 
+   5.3 Tela detalhamento dos livros
    <img width="1886" height="768" alt="image" src="https://github.com/user-attachments/assets/4c3df22f-8819-4c7d-9b4d-6f7307cb98c6" />
 
 
